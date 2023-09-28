@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Godwin's Portfolio</title>
+    <title>Godwin's Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5dbd5ef2a3.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="header">
@@ -15,8 +16,9 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Me</a></li>
-                <li><a href="#">Education & Training</a></li>
-                <li><a href="#">Work</a></li>
+                <li><a href="#">Work Experience</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Training</a></li>
                 <li><a href="#">Leisure</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -32,10 +34,10 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="images/haj.jpg"> 
+                <img src="images/tobe1.jpg"> 
             </div>
             <div class="about-col-2">
-                <h1 class="sub-title">A brief intro</h1>
+                <h2 class="sub-title">a brief intro</h2>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                     Perspiciatis eligendi dolorum a tempora odio officiis voluptate aliquid. 
                     Debitis a, sit ut voluptatum ipsam aspernatur reiciendis ipsum deserunt, 
@@ -44,14 +46,90 @@
                 </p>
 
                 <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experiences</p>
-                    <p class="tab-links">Education</p>
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Work Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('training')">Training</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web Development</span><br>Designing full stack web applications</li>
+                        <li><span>Cybersecurity</span><br>Providing web security solutions</li>
+                        <li><span>Cloud Technology</span><br>Deploying cloud solutions</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Dec 2022 - Present</span><br>Introduction to Kubernetes by Linux FoundationX on Edx</li>
+                        <li><span>Nov 2022 - Present</span><br>Data Analysis Training by Quantum Analytics (https://www.quantumanlytics.com)</li>
+                        <li><span>Nov 2022 - Present</span><br>Introduction to Networking Training by Cisco Academy</li>
+                        <li><span>Nov 2022 - Present</span><br>Cybersecurity Essential Training by Amazon Web Services Skill builder</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Web Development</span><br>Designing full stack web applications</li>
+                        <li><span>Cybersecurity</span><br>Providing web security solutions</li>
+                        <li><span>Cloud Technology</span><br>Deploying cloud solutions</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="training">
+                    <ul>
+                        <li><span>Dec 2022 - Present</span><br>Introduction to Kubernetes by Linux FoundationX on Edx</li>
+                        <li><span>Nov 2022 - Present</span><br>Data Analysis Training by Quantum Analytics (https://www.quantumanlytics.com)</li>
+                        <li><span>Nov 2022 - Present</span><br>Introduction to Networking Training by Cisco Academy</li>
+                        <li><span>Nov 2022 - Present</span><br>Cybersecurity Essential Training by Amazon Web Services Skill builder</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!---------------------------- Services ------------------------>
+<div id="services">
+    <div class="container">
+        <h2 class="sub-title">My services</h2>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quos doloribus fugit molestiae. Quibusdam a aspernatur illum. Cumque ad praesentium a amet minima, ab veniam, itaque facere soluta voluptas quas.</p>
+                <a href="#">Learn more...</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>Data Analysis</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quos doloribus fugit molestiae. Quibusdam a aspernatur illum. Cumque ad praesentium a amet minima, ab veniam, itaque facere soluta voluptas quas.</p>
+                <a href="#">Learn more...</a>
+            </div>
+            <div>
+                <i class="fa-regular fa-cloud-bolt"></i>
+                <h2>Cloud and Network security</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quos doloribus fugit molestiae. Quibusdam a aspernatur illum. Cumque ad praesentium a amet minima, ab veniam, itaque facere soluta voluptas quas.</p>
+                <a href="#">Learn more...</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links")
+    var tabcontents = document.getElementsByClassName("tab-contents")
+
+    function opentab(tabname) {
+        for (tablink of tablinks){
+            tablink.classList.remove("active-link")
+        }
+        for (tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+
+</script>
+
 </body>
 </html>
 
