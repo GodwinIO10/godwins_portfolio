@@ -34,7 +34,7 @@ nav ul li{
     margin: 10px 20px;
 }
 nav ul li a{
-    color: #fff;
+    color: rgb(1, 73, 1);
     text-decoration: none;
     font-size: 18px;
     position: relative;
@@ -56,12 +56,16 @@ nav ul li a:hover::after{
     margin-top: 20%;
     font-size: 30px;
 }
+.header-text p{       /* --------I included the entire block HEADER TEXT P with color black------ */
+    color: purple;
+}
 .header-text h1{
     font-size: 40px;
     margin-top: 20px;
+    color: purple; /* --------I included only the line COLOR PURPLE------ */
 }
 .header-text h1 span{
-    color: rgb(105, 1, 105);
+    color: rgb(1, 73, 1);
 }
 /* -----------------about -------------- */
 #about{
